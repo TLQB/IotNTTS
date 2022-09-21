@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IotNTTS Demo </title>
+</head>
+<script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</script>
+ 
+<script>
+var intervalID = setInterval(update_values, 1000);
+function update_values() {
+            $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+            $.getJSON($SCRIPT_ROOT+"/_stuff",
+                function(data) {
+                    $("#nd").text(data.nd);
+                    $("#ph").text( data.ph);
+                    $("#oxy").text(data.oxy);
+                    $("#timenow").text(data.timenow);
+                console.log(data)
+
+                });
+        }
+
+</script>
+<body on_load ="update_values">
+<h2 style="text-align:center">Hệ Thống IotNTTS</h2>
+<h3 style="text-align:center" id="timenow">?</h3>
+<img src="static/img/avatar-4.jpg">
+<div>
+	<h3>Nhiệt độ (oC) :</h3>
+	<p id = "nd">?</p>	
+</div>
+<div>
+	<h3>Nồng độ PH (%):</h3>
+	<p id = "ph">?</p>	
+</div>
+<div>
+	<h3>% Oxy trong nước (%) :</h3>
+	<p id = "oxy">?</p>	
+</div>
+<a href="http://127.0.0.1:5000/">graph</a>
+
+<script>
+	document.getElementById("nd").innerHTML;
+	document.getElementById("ph").innerHTML;
+	document.getElementById("oxy").innerHTML;
+	document.getElementById("timenow").innerHTML;
+</script>
+</body>
+</html>

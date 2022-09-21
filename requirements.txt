@@ -1,0 +1,6 @@
+paho-mqtt==1.6.1
+Flask
+Flask-MQTT
+flask-ngrok
+kivy
+kivymd 
