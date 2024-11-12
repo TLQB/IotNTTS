@@ -1,4 +1,4 @@
-Tự động hóa quá trình nuôi tôm thẻ chân trắng với Iot lora bigdata hóa mô hình.
+A comprehensive IoT-based automation system for white leg shrimp farming utilizing LoRa technology and big data analytics. This project serves as the frontend interface for monitoring and controlling smart shrimp farming operations.
 
 # Setup project 
 
